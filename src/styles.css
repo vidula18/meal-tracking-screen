@@ -759,19 +759,29 @@ body {
     margin-bottom: var(--spacing-md);
 }
 
-.dp-header {
-    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
+.kineticage-pill {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    padding: 16px 24px;
     text-align: center;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-lg);
 }
 
-.dp-brand {
-    font-size: 11px;
+.kineticage-pill span {
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.1em;
     color: #1B6543; /* Dark green from brand */
     text-transform: uppercase;
-    display: block;
-    margin-bottom: 8px;
+}
+
+.dp-header-alt {
+    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
+    text-align: left;
+    border-bottom: 2px solid #1B6543;
+    margin-bottom: var(--spacing-md);
 }
 
 .dp-title {
