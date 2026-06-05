@@ -752,36 +752,22 @@ body {
 /* Detailed Plan Section (from Screenshot) */
 .detailed-plan-section {
     background: var(--surface-color);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
     margin-bottom: var(--spacing-md);
 }
 
-.kineticage-pill {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 100px;
-    padding: 16px 24px;
+.dp-header {
+    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
     text-align: center;
-    box-shadow: var(--shadow-sm);
-    margin-bottom: var(--spacing-lg);
 }
 
-.kineticage-pill span {
-    font-size: 13px;
+.dp-brand {
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.1em;
     color: #1B6543; /* Dark green from brand */
     text-transform: uppercase;
-}
-
-.dp-header-alt {
-    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
-    text-align: left;
-    border-bottom: 2px solid #1B6543;
-    margin-bottom: var(--spacing-md);
+    display: block;
+    margin-bottom: 8px;
 }
 
 .dp-title {
@@ -812,6 +798,8 @@ body {
 .dp-table {
     display: flex;
     flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .dp-table-header {
