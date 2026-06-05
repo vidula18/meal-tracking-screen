@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Tracking Dashboard</title>
+    <meta name="description" content="A modern, beautifully designed meal tracking screen prototype.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="greeting">
+                    <h1>Good Morning, <span>Vidula</span></h1>
+                    <p>Let's hit your nutrition goals today!</p>
+                </div>
+                <div class="profile-pic">
+                    <img src="https://ui-avatars.com/api/?name=Vidula+S&background=0D8ABC&color=fff&rounded=true" alt="User Profile">
+                </div>
+            </div>
+            
+            <!-- Date Navigator -->
+            <div class="date-navigator">
+                <button class="icon-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="current-date">
+                    <span class="day">Today</span>
+                    <span class="date">Oct 15, 2026</span>
+                </div>
+                <button class="icon-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            
+            <!-- Macros Summary Widget -->
+            <section class="macros-widget glass-panel">
+                <div class="calories-ring">
+                    <div class="ring-content">
+                        <h2>1,450</h2>
+                        <p>kcal left</p>
+                    </div>
+                    <!-- SVGs for circular progress -->
+                    <svg viewBox="0 0 36 36" class="circular-chart primary">
+                        <path class="circle-bg"
+                          d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle"
+                          stroke-dasharray="60, 100"
+                          d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                    </svg>
+                </div>
+                
+                <div class="macros-breakdown">
+                    <div class="macro-item">
+                        <div class="macro-header">
+                            <span class="dot protein-dot"></span>
+                            <span class="label">Protein</span>
+                        </div>
+                        <div class="macro-bar-bg"><div class="macro-bar protein-bar" style="width: 70%"></div></div>
+                        <span class="value">85g / 120g</span>
+                    </div>
+                    <div class="macro-item">
+                        <div class="macro-header">
+                            <span class="dot carbs-dot"></span>
+                            <span class="label">Carbs</span>
+                        </div>
+                        <div class="macro-bar-bg"><div class="macro-bar carbs-bar" style="width: 45%"></div></div>
+                        <span class="value">90g / 200g</span>
+                    </div>
+                    <div class="macro-item">
+                        <div class="macro-header">
+                            <span class="dot fat-dot"></span>
+                            <span class="label">Fat</span>
+                        </div>
+                        <div class="macro-bar-bg"><div class="macro-bar fat-bar" style="width: 85%"></div></div>
+                        <span class="value">55g / 65g</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meals List -->
+            <section class="meals-section">
+                <div class="section-header">
+                    <h2>Today's Meals</h2>
+                </div>
+
+                <!-- Breakfast Card -->
+                <div class="meal-card glass-panel completed">
+                    <div class="meal-icon">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <div class="meal-details">
+                        <h3>Breakfast</h3>
+                        <p>Oatmeal with berries & protein shake</p>
+                    </div>
+                    <div class="meal-stats">
+                        <span class="calories">420 kcal</span>
+                    </div>
+                    <button class="action-btn"><i class="fa-solid fa-check"></i></button>
+                </div>
+
+                <!-- Lunch Card -->
+                <div class="meal-card glass-panel completed">
+                    <div class="meal-icon">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <div class="meal-details">
+                        <h3>Lunch</h3>
+                        <p>Grilled chicken salad</p>
+                    </div>
+                    <div class="meal-stats">
+                        <span class="calories">550 kcal</span>
+                    </div>
+                    <button class="action-btn"><i class="fa-solid fa-check"></i></button>
+                </div>
+
+                <!-- Dinner Card -->
+                <div class="meal-card glass-panel empty">
+                    <div class="meal-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div class="meal-details">
+                        <h3>Dinner</h3>
+                        <p class="placeholder-text">Recommend: Salmon & Asparagus</p>
+                    </div>
+                    <div class="meal-stats">
+                        <span class="calories">-</span>
+                    </div>
+                    <button class="action-btn add"><i class="fa-solid fa-plus"></i></button>
+                </div>
+
+                 <!-- Snacks Card -->
+                 <div class="meal-card glass-panel empty">
+                    <div class="meal-icon">
+                        <i class="fa-solid fa-apple-whole"></i>
+                    </div>
+                    <div class="meal-details">
+                        <h3>Snacks</h3>
+                        <p class="placeholder-text">Add your snacks here</p>
+                    </div>
+                    <div class="meal-stats">
+                        <span class="calories">-</span>
+                    </div>
+                    <button class="action-btn add"><i class="fa-solid fa-plus"></i></button>
+                </div>
+
+            </section>
+        </main>
+        
+        <!-- Floating Action Button -->
+        <button class="fab-button">
+            <i class="fa-solid fa-barcode"></i>
+        </button>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-chart-line"></i><span>Stats</span></a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-compass"></i><span>Discover</span></a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-user"></i><span>Profile</span></a>
+        </nav>
+    </div>
+    <script src="src/script.js"></script>
+</body>
+</html>
