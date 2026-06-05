@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 1. CTA button interaction
-    const btnPrimary = document.querySelector('.btn-primary');
-    if (btnPrimary) {
-        btnPrimary.addEventListener('click', function() {
+    // 1. PDF Card interaction
+    const activePdfCard = document.getElementById('activePdfCard');
+    if (activePdfCard) {
+        activePdfCard.addEventListener('click', function() {
             this.style.transform = 'scale(0.96)';
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
