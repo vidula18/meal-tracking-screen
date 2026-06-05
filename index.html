@@ -3,176 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Tracking Dashboard</title>
-    <meta name="description" content="A modern, beautifully designed meal tracking screen prototype.">
+    <title>Nutrition & Meal Plan</title>
+    <meta name="description" content="A calm, clinical meal tracking prototype.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/styles.css">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="app-container">
+        
         <!-- Header -->
-        <header class="dashboard-header">
-            <div class="header-content">
-                <div class="greeting">
-                    <h1>Good Morning, <span>Vidula</span></h1>
-                    <p>Let's hit your nutrition goals today!</p>
-                </div>
-                <div class="profile-pic">
-                    <img src="https://ui-avatars.com/api/?name=Vidula+S&background=0D8ABC&color=fff&rounded=true" alt="User Profile">
-                </div>
-            </div>
-            
-            <!-- Date Navigator -->
-            <div class="date-navigator">
-                <button class="icon-btn"><i class="fa-solid fa-chevron-left"></i></button>
-                <div class="current-date">
-                    <span class="day">Today</span>
-                    <span class="date">Oct 15, 2026</span>
-                </div>
-                <button class="icon-btn"><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
+        <header class="top-nav">
+            <button class="icon-btn back-btn" aria-label="Go back">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h1 class="page-title">Nutrition</h1>
+            <div class="header-right-placeholder"></div>
         </header>
 
         <!-- Main Content -->
-        <main class="dashboard-main">
+        <main class="content-scroll">
             
-            <!-- Macros Summary Widget -->
-            <section class="macros-widget glass-panel">
-                <div class="calories-ring">
-                    <div class="ring-content">
-                        <h2>1,450</h2>
-                        <p>kcal left</p>
-                    </div>
-                    <!-- SVGs for circular progress -->
-                    <svg viewBox="0 0 36 36" class="circular-chart primary">
-                        <path class="circle-bg"
-                          d="M18 2.0845
-                            a 15.9155 15.9155 0 0 1 0 31.831
-                            a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <path class="circle"
-                          stroke-dasharray="60, 100"
-                          d="M18 2.0845
-                            a 15.9155 15.9155 0 0 1 0 31.831
-                            a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                    </svg>
+            <!-- Daily Targets Summary -->
+            <section class="module targets-module">
+                <div class="module-header">
+                    <h2>Daily Targets</h2>
+                    <span class="date-badge">Today</span>
                 </div>
                 
-                <div class="macros-breakdown">
-                    <div class="macro-item">
+                <div class="macro-grid">
+                    <div class="macro-card">
                         <div class="macro-header">
-                            <span class="dot protein-dot"></span>
-                            <span class="label">Protein</span>
+                            <span class="macro-label">Calories</span>
+                            <span class="macro-value">1,450 <span class="unit">kcal</span></span>
                         </div>
-                        <div class="macro-bar-bg"><div class="macro-bar protein-bar" style="width: 70%"></div></div>
-                        <span class="value">85g / 120g</span>
+                        <div class="progress-bar-bg"><div class="progress-bar calories-bar" style="width: 72%"></div></div>
+                        <p class="macro-subtext">550 kcal remaining</p>
                     </div>
-                    <div class="macro-item">
-                        <div class="macro-header">
-                            <span class="dot carbs-dot"></span>
-                            <span class="label">Carbs</span>
+
+                    <div class="macros-row">
+                        <div class="macro-mini">
+                            <span class="macro-label">Protein</span>
+                            <span class="macro-value">85<span class="unit">g</span></span>
+                            <div class="progress-bar-bg"><div class="progress-bar protein-bar" style="width: 70%"></div></div>
+                            <span class="macro-target">of 120g</span>
                         </div>
-                        <div class="macro-bar-bg"><div class="macro-bar carbs-bar" style="width: 45%"></div></div>
-                        <span class="value">90g / 200g</span>
-                    </div>
-                    <div class="macro-item">
-                        <div class="macro-header">
-                            <span class="dot fat-dot"></span>
-                            <span class="label">Fat</span>
+                        <div class="macro-mini">
+                            <span class="macro-label">Carbs</span>
+                            <span class="macro-value">90<span class="unit">g</span></span>
+                            <div class="progress-bar-bg"><div class="progress-bar carbs-bar" style="width: 45%"></div></div>
+                            <span class="macro-target">of 200g</span>
                         </div>
-                        <div class="macro-bar-bg"><div class="macro-bar fat-bar" style="width: 85%"></div></div>
-                        <span class="value">55g / 65g</span>
+                        <div class="macro-mini">
+                            <span class="macro-label">Fat</span>
+                            <span class="macro-value">55<span class="unit">g</span></span>
+                            <div class="progress-bar-bg"><div class="progress-bar fat-bar" style="width: 85%"></div></div>
+                            <span class="macro-target">of 65g</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Meals List -->
-            <section class="meals-section">
-                <div class="section-header">
-                    <h2>Today's Meals</h2>
+            <!-- Weekly Logging / Streak Area -->
+            <section class="module weekly-module">
+                <div class="module-header">
+                    <h2>Weekly Log</h2>
+                    <span class="streak-badge"><i class="fa-solid fa-fire"></i> 12 Day Streak</span>
                 </div>
-
-                <!-- Breakfast Card -->
-                <div class="meal-card glass-panel completed">
-                    <div class="meal-icon">
-                        <i class="fa-solid fa-mug-hot"></i>
+                <div class="week-row">
+                    <div class="day-bubble logged">
+                        <span class="day-name">M</span>
+                        <div class="bubble-indicator"><i class="fa-solid fa-check"></i></div>
                     </div>
-                    <div class="meal-details">
-                        <h3>Breakfast</h3>
-                        <p>Oatmeal with berries & protein shake</p>
+                    <div class="day-bubble logged">
+                        <span class="day-name">T</span>
+                        <div class="bubble-indicator"><i class="fa-solid fa-check"></i></div>
                     </div>
-                    <div class="meal-stats">
-                        <span class="calories">420 kcal</span>
+                    <div class="day-bubble logged">
+                        <span class="day-name">W</span>
+                        <div class="bubble-indicator"><i class="fa-solid fa-check"></i></div>
                     </div>
-                    <button class="action-btn"><i class="fa-solid fa-check"></i></button>
+                    <div class="day-bubble active">
+                        <span class="day-name">T</span>
+                        <div class="bubble-indicator"></div>
+                    </div>
+                    <div class="day-bubble pending">
+                        <span class="day-name">F</span>
+                        <div class="bubble-indicator"></div>
+                    </div>
+                    <div class="day-bubble pending">
+                        <span class="day-name">S</span>
+                        <div class="bubble-indicator"></div>
+                    </div>
+                    <div class="day-bubble pending">
+                        <span class="day-name">S</span>
+                        <div class="bubble-indicator"></div>
+                    </div>
                 </div>
-
-                <!-- Lunch Card -->
-                <div class="meal-card glass-panel completed">
-                    <div class="meal-icon">
-                        <i class="fa-solid fa-bowl-food"></i>
-                    </div>
-                    <div class="meal-details">
-                        <h3>Lunch</h3>
-                        <p>Grilled chicken salad</p>
-                    </div>
-                    <div class="meal-stats">
-                        <span class="calories">550 kcal</span>
-                    </div>
-                    <button class="action-btn"><i class="fa-solid fa-check"></i></button>
-                </div>
-
-                <!-- Dinner Card -->
-                <div class="meal-card glass-panel empty">
-                    <div class="meal-icon">
-                        <i class="fa-solid fa-utensils"></i>
-                    </div>
-                    <div class="meal-details">
-                        <h3>Dinner</h3>
-                        <p class="placeholder-text">Recommend: Salmon & Asparagus</p>
-                    </div>
-                    <div class="meal-stats">
-                        <span class="calories">-</span>
-                    </div>
-                    <button class="action-btn add"><i class="fa-solid fa-plus"></i></button>
-                </div>
-
-                 <!-- Snacks Card -->
-                 <div class="meal-card glass-panel empty">
-                    <div class="meal-icon">
-                        <i class="fa-solid fa-apple-whole"></i>
-                    </div>
-                    <div class="meal-details">
-                        <h3>Snacks</h3>
-                        <p class="placeholder-text">Add your snacks here</p>
-                    </div>
-                    <div class="meal-stats">
-                        <span class="calories">-</span>
-                    </div>
-                    <button class="action-btn add"><i class="fa-solid fa-plus"></i></button>
-                </div>
-
             </section>
+
+            <!-- Current Meal Plan Details -->
+            <section class="module current-plan-module">
+                <div class="module-header">
+                    <h2>Active Meal Plan</h2>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-info">
+                        <div class="plan-badge">Week 4</div>
+                        <h3>Metabolic Reset Phase</h3>
+                        <p>Focus on high protein, moderate healthy fats, and low glycemic carbohydrates.</p>
+                    </div>
+                    <div class="plan-action">
+                        <button class="btn-primary">View Full Plan</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Important Note Callout -->
+            <section class="module note-module">
+                <div class="note-banner">
+                    <div class="note-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="note-content">
+                        <strong>Clinical Reminder</strong>
+                        <p>Take your prescribed Vitamin D3 supplement with your heaviest meal today to optimize absorption.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Daily Habits -->
+            <section class="module habits-module">
+                <div class="module-header">
+                    <h2>Key Daily Habits</h2>
+                </div>
+                <div class="habits-list">
+                    <label class="habit-item">
+                        <input type="checkbox" class="habit-checkbox" checked>
+                        <span class="custom-checkbox"><i class="fa-solid fa-check"></i></span>
+                        <div class="habit-text">
+                            <strong>Drink 2.5L Water</strong>
+                            <span>1.5L / 2.5L Completed</span>
+                        </div>
+                    </label>
+                    <label class="habit-item">
+                        <input type="checkbox" class="habit-checkbox">
+                        <span class="custom-checkbox"><i class="fa-solid fa-check"></i></span>
+                        <div class="habit-text">
+                            <strong>15 Min Post-Meal Walk</strong>
+                            <span>Lunch & Dinner</span>
+                        </div>
+                    </label>
+                    <label class="habit-item">
+                        <input type="checkbox" class="habit-checkbox">
+                        <span class="custom-checkbox"><i class="fa-solid fa-check"></i></span>
+                        <div class="habit-text">
+                            <strong>Take Supplements</strong>
+                            <span>Vitamin D3 & Omega 3</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Monthly Meal Plans Section -->
+            <section class="module monthly-plans-module">
+                <div class="module-header">
+                    <h2>Monthly Meal Plans</h2>
+                    <span class="month-label">October 2026</span>
+                </div>
+                
+                <div class="plans-list">
+                    <!-- Completed Plan -->
+                    <div class="history-card completed">
+                        <div class="history-card-header">
+                            <span class="history-week">Week 1</span>
+                            <span class="history-status">Completed</span>
+                        </div>
+                        <div class="history-card-body">
+                            <h4>Foundation Phase</h4>
+                            <p class="history-date">Oct 1 - Oct 7</p>
+                            <p class="history-summary">Baseline macro establishment with gentle carbohydrate reduction.</p>
+                        </div>
+                    </div>
+
+                    <!-- Completed Plan -->
+                    <div class="history-card completed">
+                        <div class="history-card-header">
+                            <span class="history-week">Week 2</span>
+                            <span class="history-status">Completed</span>
+                        </div>
+                        <div class="history-card-body">
+                            <h4>Gut Healing Protocol</h4>
+                            <p class="history-date">Oct 8 - Oct 14</p>
+                            <p class="history-summary">Elimination of common inflammatory triggers. Bone broth integration.</p>
+                        </div>
+                    </div>
+
+                    <!-- Active Plan -->
+                    <div class="history-card active">
+                        <div class="history-card-header">
+                            <span class="history-week">Week 3</span>
+                            <span class="history-status active-status">Active Now</span>
+                        </div>
+                        <div class="history-card-body">
+                            <h4>Metabolic Reset Phase</h4>
+                            <p class="history-date">Oct 15 - Oct 21</p>
+                            <p class="history-summary">Focus on high protein, moderate healthy fats, and low glycemic carbs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Plan -->
+                    <div class="history-card upcoming">
+                        <div class="history-card-header">
+                            <span class="history-week">Week 4</span>
+                            <span class="history-status">Upcoming</span>
+                        </div>
+                        <div class="history-card-body">
+                            <h4>Reintroduction Phase</h4>
+                            <p class="history-date">Oct 22 - Oct 28</p>
+                            <p class="history-summary">Strategic reintroduction of complex carbohydrates around workout windows.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
         </main>
-        
-        <!-- Floating Action Button -->
-        <button class="fab-button">
-            <i class="fa-solid fa-barcode"></i>
-        </button>
-
-        <!-- Bottom Navigation -->
-        <nav class="bottom-nav">
-            <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i><span>Home</span></a>
-            <a href="#" class="nav-item"><i class="fa-solid fa-chart-line"></i><span>Stats</span></a>
-            <a href="#" class="nav-item"><i class="fa-solid fa-compass"></i><span>Discover</span></a>
-            <a href="#" class="nav-item"><i class="fa-solid fa-user"></i><span>Profile</span></a>
-        </nav>
     </div>
     <script src="src/script.js"></script>
 </body>
