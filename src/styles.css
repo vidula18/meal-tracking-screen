@@ -748,3 +748,149 @@ body {
 .modal-note .note-content p {
     color: var(--text-secondary);
 }
+
+/* Detailed Plan Section (from Screenshot) */
+.detailed-plan-section {
+    background: var(--surface-color);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+}
+
+.dp-header {
+    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+.dp-brand {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #1B6543; /* Dark green from brand */
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.dp-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.dp-subtitle {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.dp-divider {
+    height: 2px;
+    background-color: #1B6543;
+    margin: 0 var(--spacing-lg) var(--spacing-lg);
+}
+
+.dp-table-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1B6543;
+    padding: 0 var(--spacing-lg) 12px;
+}
+
+.dp-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.dp-table-header {
+    display: flex;
+    background-color: #266A48;
+    color: white;
+    padding: 12px var(--spacing-md);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.dp-row {
+    display: flex;
+    padding: 16px var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    background-color: white;
+}
+
+.dp-row:last-child {
+    border-bottom: none;
+}
+
+.dp-highlight-row {
+    background-color: #FDF7E1; /* Light yellow from screenshot */
+}
+
+.dp-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.dp-timing {
+    width: 25%;
+    gap: 2px;
+}
+
+.dp-timing strong {
+    font-size: 14px;
+    color: #111827;
+}
+
+.dp-timing span {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.dp-type {
+    width: 30%;
+    align-items: flex-start;
+}
+
+.dp-badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.dp-balanced { background-color: #DDECDD; color: #165636; }
+.dp-power { background-color: #D5EBE1; color: #165636; }
+.dp-light { background-color: #DDECDD; color: #165636; }
+
+.dp-options {
+    width: 45%;
+}
+
+.dp-options ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 0;
+}
+
+.dp-options li {
+    font-size: 13px;
+    color: #111827;
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.dp-options li::before {
+    content: "•";
+    color: #266A48;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+}

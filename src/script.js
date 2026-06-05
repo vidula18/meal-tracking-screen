@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalSummary = document.getElementById('modalPlanSummary');
 
     function openModal(week, title, date, summary) {
-        modalBadge.innerText = week;
-        modalTitle.innerText = title;
-        modalDate.innerText = date;
-        modalSummary.innerText = summary;
+        if (modalBadge) modalBadge.innerText = week;
+        if (modalTitle) modalTitle.innerText = title;
+        if (modalDate) modalDate.innerText = date;
+        if (modalSummary) modalSummary.innerText = summary;
         modal.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
