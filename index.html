@@ -31,7 +31,21 @@
         <!-- Main Content -->
         <main class="content-scroll">
             
-            <!-- Daily Targets Summary -->
+            <!-- 1. Clinical Reminder (Important Note) -->
+            <section class="module note-module" id="clinicalReminder">
+                <div class="note-banner dismissible">
+                    <div class="note-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="note-content">
+                        <strong>Clinical Reminder</strong>
+                        <p>Take your prescribed Vitamin D3 supplement with your heaviest meal today to optimize absorption.</p>
+                    </div>
+                    <button class="icon-btn dismiss-btn" id="dismissReminder" aria-label="Dismiss">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 2. Daily Targets Summary (Upgraded) -->
             <section class="module targets-module">
                 <div class="module-header">
                     <h2>Daily Targets</h2>
@@ -39,39 +53,91 @@
                 </div>
                 
                 <div class="macro-grid">
-                    <div class="macro-card">
-                        <div class="macro-header">
-                            <span class="macro-label">Calories</span>
-                            <span class="macro-value">1,450 <span class="unit">kcal</span></span>
+                    <div class="calorie-chart-container">
+                        <div class="calorie-donut" style="--percentage: 72.5%;">
+                            <div class="calorie-inner">
+                                <span class="calorie-remaining">550 <span class="unit">kcal</span></span>
+                                <span class="calorie-total">1,450 / 2,000 eaten</span>
+                            </div>
                         </div>
-                        <div class="progress-bar-bg"><div class="progress-bar calories-bar" style="width: 72%"></div></div>
-                        <p class="macro-subtext">550 kcal remaining</p>
                     </div>
 
-                    <div class="macros-row">
-                        <div class="macro-mini">
-                            <span class="macro-label">Protein</span>
-                            <span class="macro-value">85<span class="unit">g</span></span>
-                            <div class="progress-bar-bg"><div class="progress-bar protein-bar" style="width: 70%"></div></div>
-                            <span class="macro-target">of 120g</span>
+                    <div class="macro-segmented-container">
+                        <div class="macro-labels">
+                            <span class="macro-label"><span class="dot protein-dot"></span>Protein 85g</span>
+                            <span class="macro-label"><span class="dot carbs-dot"></span>Carbs 90g</span>
+                            <span class="macro-label"><span class="dot fat-dot"></span>Fat 55g</span>
                         </div>
-                        <div class="macro-mini">
-                            <span class="macro-label">Carbs</span>
-                            <span class="macro-value">90<span class="unit">g</span></span>
-                            <div class="progress-bar-bg"><div class="progress-bar carbs-bar" style="width: 45%"></div></div>
-                            <span class="macro-target">of 200g</span>
-                        </div>
-                        <div class="macro-mini">
-                            <span class="macro-label">Fat</span>
-                            <span class="macro-value">55<span class="unit">g</span></span>
-                            <div class="progress-bar-bg"><div class="progress-bar fat-bar" style="width: 85%"></div></div>
-                            <span class="macro-target">of 65g</span>
+                        <div class="macro-segmented-bar">
+                            <div class="segment protein-seg" style="width: 37%"></div>
+                            <div class="segment carbs-seg" style="width: 39%"></div>
+                            <div class="segment fat-seg" style="width: 24%"></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Weekly Logging / Streak Area -->
+            <!-- 3. Active Meal Plan (Upgraded) -->
+            <section class="module current-plan-module">
+                <div class="module-header">
+                    <h2>Active Meal Plan</h2>
+                </div>
+                <div class="active-snippet-card">
+                    <div class="snippet-header">
+                        <span class="snippet-week">Week 3</span>
+                        <span class="snippet-date">Oct 15 - Oct 21</span>
+                    </div>
+                    <div class="snippet-body">
+                        <span class="snippet-label">TODAY'S LUNCH</span>
+                        <h4 class="snippet-menu">Grilled Chicken Salad</h4>
+                        <p class="snippet-desc">With mixed greens, avocado, and olive oil dressing.</p>
+                    </div>
+                    <button class="btn-primary" id="activePdfCard">
+                        <i class="fa-regular fa-file-pdf"></i> View Full PDF Menu
+                    </button>
+                </div>
+            </section>
+
+            <!-- 4. Key Daily Habits (Upgraded) -->
+            <section class="module habits-module">
+                <div class="module-header">
+                    <h2>Key Daily Habits</h2>
+                </div>
+                <div class="habits-list">
+                    <!-- Water Tracker -->
+                    <div class="water-tracker-card">
+                        <div class="water-header">
+                            <strong>Daily Hydration</strong>
+                            <span class="water-progress" id="waterProgressText">5 / 8 Glasses</span>
+                        </div>
+                        <div class="droplets-container" id="waterDroplets">
+                            <button class="droplet-btn active" aria-label="Glass 1"><i class="fa-solid fa-droplet"></i></button>
+                            <button class="droplet-btn active" aria-label="Glass 2"><i class="fa-solid fa-droplet"></i></button>
+                            <button class="droplet-btn active" aria-label="Glass 3"><i class="fa-solid fa-droplet"></i></button>
+                            <button class="droplet-btn active" aria-label="Glass 4"><i class="fa-solid fa-droplet"></i></button>
+                            <button class="droplet-btn active" aria-label="Glass 5"><i class="fa-solid fa-droplet"></i></button>
+                            <button class="droplet-btn" aria-label="Glass 6"><i class="fa-solid fa-droplet"></i></button>
+                            <button class="droplet-btn" aria-label="Glass 7"><i class="fa-solid fa-droplet"></i></button>
+                            <button class="droplet-btn" aria-label="Glass 8"><i class="fa-solid fa-droplet"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Toggle Pills -->
+                    <div class="habit-pills-container">
+                        <button class="habit-pill active">
+                            <i class="fa-solid fa-check"></i> 15 Min Walk
+                        </button>
+                        <button class="habit-pill active">
+                            <i class="fa-solid fa-check"></i> Vitamins
+                        </button>
+                        <button class="habit-pill">
+                            <i class="fa-solid fa-plus"></i> Sleep 8h
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Weekly Logging / Streak Area -->
             <section class="module weekly-module">
                 <div class="module-header">
                     <h2>Weekly Log</h2>
@@ -109,83 +175,7 @@
                 </div>
             </section>
 
-            <!-- Current Meal Plan Details -->
-            <section class="module current-plan-module">
-                <div class="module-header">
-                    <h2>Active Meal Plan</h2>
-                </div>
-                <div class="pdf-preview-card" id="activePdfCard" role="button" tabindex="0">
-                    <div class="pdf-header">
-                        <div class="pdf-header-text">
-                            <h4>Week 3</h4>
-                            <p>Oct 15 - Oct 21</p>
-                        </div>
-                        <div class="pdf-icon">
-                            <i class="fa-solid fa-file-pdf"></i>
-                        </div>
-                    </div>
-                    <div class="pdf-thumbnail">
-                        <div class="doc-mockup">
-                            <div class="doc-header"></div>
-                            <div class="doc-grid">
-                                <div class="doc-row"></div>
-                                <div class="doc-row highlight"></div>
-                                <div class="doc-row"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pdf-footer">
-                        <span>Tap to view full plan</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Important Note Callout -->
-            <section class="module note-module">
-                <div class="note-banner">
-                    <div class="note-icon"><i class="fa-solid fa-circle-info"></i></div>
-                    <div class="note-content">
-                        <strong>Clinical Reminder</strong>
-                        <p>Take your prescribed Vitamin D3 supplement with your heaviest meal today to optimize absorption.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Key Daily Habits -->
-            <section class="module habits-module">
-                <div class="module-header">
-                    <h2>Key Daily Habits</h2>
-                </div>
-                <div class="habits-list">
-                    <label class="habit-item">
-                        <input type="checkbox" class="habit-checkbox" checked>
-                        <span class="custom-checkbox"><i class="fa-solid fa-check"></i></span>
-                        <div class="habit-text">
-                            <strong>Drink 2.5L Water</strong>
-                            <span>1.5L / 2.5L Completed</span>
-                        </div>
-                    </label>
-                    <label class="habit-item">
-                        <input type="checkbox" class="habit-checkbox">
-                        <span class="custom-checkbox"><i class="fa-solid fa-check"></i></span>
-                        <div class="habit-text">
-                            <strong>15 Min Post-Meal Walk</strong>
-                            <span>Lunch & Dinner</span>
-                        </div>
-                    </label>
-                    <label class="habit-item">
-                        <input type="checkbox" class="habit-checkbox">
-                        <span class="custom-checkbox"><i class="fa-solid fa-check"></i></span>
-                        <div class="habit-text">
-                            <strong>Take Supplements</strong>
-                            <span>Vitamin D3 & Omega 3</span>
-                        </div>
-                    </label>
-                </div>
-            </section>
-
-            <!-- Monthly Meal Plans Section -->
+            <!-- 6. Monthly Meal Plans Section -->
             <section class="module monthly-plans-module">
                 <div class="module-header">
                     <h2>Monthly Meal Plans</h2>
@@ -223,7 +213,7 @@
                 </div>
             </section>
 
-            <!-- Nutritionist Section -->
+            <!-- 7. Nutritionist Section -->
             <section class="module nutritionist-module">
                 <div class="nutritionist-header">YOUR NUTRITIONIST</div>
                 <button class="btn-whatsapp-card">

@@ -98,4 +98,56 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 150);
         });
     }
+    // 5. Dismiss Clinical Reminder
+    const dismissBtn = document.getElementById('dismissReminder');
+    const clinicalReminder = document.getElementById('clinicalReminder');
+    if (dismissBtn && clinicalReminder) {
+        dismissBtn.addEventListener('click', () => {
+            clinicalReminder.style.opacity = '0';
+            setTimeout(() => {
+                clinicalReminder.style.display = 'none';
+            }, 300);
+        });
+    }
+
+    // 6. Habit Pills Toggle
+    const habitPills = document.querySelectorAll('.habit-pill');
+    habitPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (this.classList.contains('active')) {
+                icon.className = 'fa-solid fa-check';
+            } else {
+                icon.className = 'fa-solid fa-plus';
+            }
+        });
+    });
+
+    // 7. Water Tracker
+    const droplets = document.querySelectorAll('.droplet-btn');
+    const waterProgressText = document.getElementById('waterProgressText');
+    droplets.forEach((droplet, index) => {
+        droplet.addEventListener('click', () => {
+            // Fill this one and all before it, empty all after it
+            let activeCount = index + 1;
+            
+            // If clicking the last active droplet, untoggle it
+            if (droplet.classList.contains('active') && (index === droplets.length - 1 || !droplets[index+1].classList.contains('active'))) {
+                activeCount = index;
+            }
+
+            droplets.forEach((d, i) => {
+                if (i < activeCount) {
+                    d.classList.add('active');
+                } else {
+                    d.classList.remove('active');
+                }
+            });
+
+            if (waterProgressText) {
+                waterProgressText.innerText = `${activeCount} / 8 Glasses`;
+            }
+        });
+    });
 });
