@@ -67,15 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
     historyCards.forEach(card => {
         card.addEventListener('click', function() {
             const week = this.querySelector('.history-week').innerText;
-            const status = this.querySelector('.history-status').innerText;
-            const title = this.querySelector('h4').innerText;
             const date = this.querySelector('.history-date').innerText;
-            const summary = this.querySelector('.history-summary').innerText;
+            
+            // Read from data attributes instead of child nodes
+            const status = this.getAttribute('data-status');
+            const title = this.getAttribute('data-title');
+            const summary = this.getAttribute('data-summary');
             
             // Simple click animation
             this.style.transform = 'scale(0.98)';
             setTimeout(() => {
-                this.style.transform = 'translateY(-2px)'; // Return to hover state essentially
+                this.style.transform = 'scale(1)'; // Return to normal state
                 if (status !== 'Upcoming') {
                     openModal(week, title, date, summary);
                 } else {

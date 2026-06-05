@@ -570,86 +570,70 @@ body {
     gap: 12px;
 }
 
+/* Simplified History Card */
 .history-card {
-    background: var(--surface-color);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-color);
-    padding: 16px;
-    cursor: pointer;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-}
-
-.history-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.history-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-}
-
-.history-card.completed::before { background-color: var(--border-color); }
-.history-card.active::before { background-color: var(--accent-primary); }
-.history-card.upcoming::before { background-color: var(--surface-hover); }
-
-.history-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.history-card:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.history-card:active {
+    transform: scale(0.98);
 }
 
 .history-week {
-    font-size: 12px;
     font-weight: 600;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.history-status {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 4px 8px;
-    border-radius: 6px;
-    background: var(--surface-hover);
-    color: var(--text-secondary);
-}
-
-.active-status {
-    background: var(--accent-bg);
-    color: var(--accent-primary);
-}
-
-.history-card-body h4 {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 4px;
+    font-size: 16px;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .history-date {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--text-secondary);
-    margin-bottom: 8px;
+    flex: 1;
+    text-align: right;
+    margin-right: 12px;
 }
 
-.history-summary {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.4;
+.chevron-icon {
+    color: var(--border-color);
+    font-size: 14px;
 }
 
-.history-card.upcoming .history-card-body h4,
-.history-card.upcoming .history-summary {
-    color: var(--text-tertiary);
+.active-card {
+    border-color: #A7F3D0;
+    background-color: #F0FDF4;
+}
+
+.active-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10B981;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.upcoming-card {
+    opacity: 0.6;
+    background-color: #F8FAFC;
+    cursor: not-allowed;
+}
+
+.upcoming-card .chevron-icon {
+    color: #94A3B8;
 }
 
 /* Modal Overlay */
