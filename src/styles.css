@@ -915,23 +915,20 @@ body {
 }
 
 .dp-table-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 22% 26% 52%;
     background-color: #266A48;
     color: white;
-    padding: 12px var(--spacing-md);
+    padding: 12px 16px;
     font-size: 13px;
     font-weight: 600;
 }
 
 .dp-row {
-    display: flex;
-    padding: 16px var(--spacing-md);
-    border-bottom: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: 22% 26% 52%;
+    padding: 16px;
     background-color: white;
-}
-
-.dp-row:last-child {
-    border-bottom: none;
 }
 
 .dp-highlight-row {
@@ -944,7 +941,6 @@ body {
 }
 
 .dp-timing {
-    width: 25%;
     gap: 2px;
 }
 
@@ -959,17 +955,19 @@ body {
 }
 
 .dp-type {
-    width: 30%;
     align-items: flex-start;
+    padding-right: 8px;
 }
 
 .dp-badge {
     font-size: 12px;
     font-weight: 700;
-    padding: 6px 10px;
+    padding: 6px 8px;
     border-radius: 6px;
     text-align: center;
     line-height: 1.2;
+    display: inline-block;
+    white-space: normal;
 }
 
 .dp-balanced { background-color: #DDECDD; color: #165636; }
@@ -977,7 +975,7 @@ body {
 .dp-light { background-color: #DDECDD; color: #165636; }
 
 .dp-options {
-    width: 45%;
+    /* Takes remaining grid space */
 }
 
 .dp-options ul {
