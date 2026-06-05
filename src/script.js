@@ -84,4 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 150);
         });
     });
+
+    // 4. WhatsApp Card interaction
+    const waCard = document.querySelector('.whatsapp-card');
+    if (waCard) {
+        waCard.addEventListener('click', function() {
+            this.style.transform = 'scale(0.96)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+                alert('Opening WhatsApp to chat with Dr. Orika...');
+            }, 150);
+        });
+    }
 });

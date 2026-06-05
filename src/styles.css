@@ -377,6 +377,73 @@ body {
     line-height: 1.5;
 }
 
+/* Nutritionist Section */
+.nutritionist-module {
+    margin-bottom: var(--spacing-lg);
+}
+
+.nutritionist-header {
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748B;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.whatsapp-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.whatsapp-card:active {
+    transform: scale(0.98);
+}
+
+.wa-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    background-color: #E6F6EC;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.wa-icon-wrapper i {
+    font-size: 28px;
+    color: #25D366; /* WhatsApp Brand Green */
+}
+
+.wa-content {
+    flex: 1;
+}
+
+.wa-content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.wa-content p {
+    font-size: 14px;
+    color: #64748B;
+}
+
+.wa-arrow {
+    color: #94A3B8;
+    font-size: 14px;
+}
+
 .btn-primary {
     width: 100%;
     padding: 14px;
