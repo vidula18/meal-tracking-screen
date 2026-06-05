@@ -22,67 +22,63 @@
             <button class="icon-btn back-btn" aria-label="Go back">
                 &larr;
             </button>
-            <h1 class="page-title">Nutrition</h1>
+            <h1 class="page-title">Guidance</h1>
             <div class="header-right-placeholder"></div>
         </header>
 
         <!-- Main Content -->
         <main class="content-scroll">
             
-            <!-- 1. Top Area: Daily Targets & Clinical Reminder -->
-            <section class="module top-module">
-                <div class="note-banner dismissible" id="clinicalReminder">
-                    <div class="note-content">
-                        <strong>Clinical Reminder:</strong> Take prescribed Vitamin D3 with your heaviest meal.
-                    </div>
-                    <button class="icon-btn dismiss-btn" id="dismissReminder" aria-label="Dismiss">&times;</button>
+            <!-- Streak Banner -->
+            <div class="streak-banner">
+                <div class="streak-text">12 Days on Plan</div>
+                <div class="streak-desc">Consistent adherence to recommendations</div>
+            </div>
+
+            <!-- Daily Guidance -->
+            <section class="module guidance-module">
+                <div class="module-header-compact">
+                    <h2>Daily Guidance</h2>
+                    <span class="date-badge">Today</span>
                 </div>
-
-                <div class="targets-compact">
-                    <div class="calorie-chart-container">
-                        <div class="calorie-donut" style="--percentage: 72.5%;">
-                            <div class="calorie-inner">
-                                <span class="calorie-remaining">550 <span class="unit">kcal</span></span>
-                            </div>
-                        </div>
+                <div class="guidance-card">
+                    <!-- Pie Chart for ratios -->
+                    <div class="macro-pie-container">
+                       <div class="macro-pie" style="background: conic-gradient(var(--protein-color) 0% 30%, var(--carbs-color) 30% 70%, var(--fat-color) 70% 100%);">
+                           <div class="pie-inner">
+                               <span class="pie-label">Ratio</span>
+                           </div>
+                       </div>
                     </div>
-
-                    <div class="macro-split-bars">
-                        <!-- Protein -->
-                        <div class="split-bar-row">
-                            <div class="split-bar-header">
-                                <span class="split-label">Pro: <strong>85g</strong></span>
-                                <span class="split-left">35 left</span>
-                            </div>
-                            <div class="split-bar-bg bg-protein"><div class="split-bar-fill fill-protein" style="width: 70%"></div></div>
+                    <!-- Targets List -->
+                    <div class="targets-list">
+                        <div class="target-row">
+                            <span class="target-title">Calories</span>
+                            <span class="target-val">Target: 2,000 kcal</span>
                         </div>
-                        <!-- Carbs -->
-                        <div class="split-bar-row">
-                            <div class="split-bar-header">
-                                <span class="split-label">Car: <strong>90g</strong></span>
-                                <span class="split-left">110 left</span>
-                            </div>
-                            <div class="split-bar-bg bg-carbs"><div class="split-bar-fill fill-carbs" style="width: 45%"></div></div>
+                        <div class="target-row">
+                            <span class="target-title" style="color: var(--protein-color);">Protein (30%)</span>
+                            <span class="target-val">Target: 120g</span>
                         </div>
-                        <!-- Fat -->
-                        <div class="split-bar-row">
-                            <div class="split-bar-header">
-                                <span class="split-label">Fat: <strong>55g</strong></span>
-                                <span class="split-left">15 left</span>
-                            </div>
-                            <div class="split-bar-bg bg-fat"><div class="split-bar-fill fill-fat" style="width: 78%"></div></div>
+                        <div class="target-row">
+                            <span class="target-title" style="color: var(--carbs-color);">Carbs (40%)</span>
+                            <span class="target-val">Target: 150g</span>
+                        </div>
+                        <div class="target-row">
+                            <span class="target-title" style="color: var(--fat-color);">Fats (30%)</span>
+                            <span class="target-val">Target: 65g</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 2. Active Meal Plan (Compact) -->
+            <!-- Active Recommendation Snippet -->
             <section class="module current-plan-module">
                 <div class="active-snippet-slim" id="activePdfCard" role="button" tabindex="0">
                     <div class="snippet-info">
                         <span class="snippet-week">W3</span>
                         <div class="snippet-text">
-                            <strong>Today's Lunch</strong>
+                            <strong>Recommended Lunch</strong>
                             <span>Grilled Chicken Salad</span>
                         </div>
                     </div>
@@ -90,44 +86,49 @@
                 </div>
             </section>
 
-            <!-- 3. Weekly Log (Slim) -->
-            <section class="module weekly-module">
-                <div class="week-row-slim">
-                    <span class="day-dot logged">M</span>
-                    <span class="day-dot logged">T</span>
-                    <span class="day-dot logged">W</span>
-                    <span class="day-dot active">T</span>
-                    <span class="day-dot pending">F</span>
-                    <span class="day-dot pending">S</span>
-                    <span class="day-dot pending">S</span>
+            <!-- Key Habits (Actionable Recommendations) -->
+            <section class="module habits-module">
+                <div class="module-header-compact">
+                    <h2>Recommended Habits</h2>
+                </div>
+                <div class="habits-list-clean">
+                    <div class="habit-item">
+                        <span class="habit-name">Hydration</span>
+                        <span class="habit-desc">Aim for 8 glasses of water</span>
+                    </div>
+                    <div class="habit-item">
+                        <span class="habit-name">Movement</span>
+                        <span class="habit-desc">15-minute post-meal walk</span>
+                    </div>
+                    <div class="habit-item">
+                        <span class="habit-name">Recovery</span>
+                        <span class="habit-desc">Target 8 hours of sleep</span>
+                    </div>
                 </div>
             </section>
 
-            <!-- 4. Monthly Meal Plans (4-Column Grid) -->
-            <section class="module monthly-plans-module">
+            <!-- Unified Recommendation Week Switcher -->
+            <section class="module switcher-module">
                 <div class="module-header-compact">
-                    <h2>Monthly Archive</h2>
-                    <span class="month-label">Oct '26</span>
+                    <h2>Recommendation Plan</h2>
                 </div>
-                
-                <div class="monthly-grid">
-                    <button class="grid-card history-card" data-title="Foundation Phase" data-summary="Baseline macro establishment." data-status="Completed">
-                        <span class="g-week">W1</span>
-                        <span class="g-date">1-7</span>
-                    </button>
-                    <button class="grid-card history-card" data-title="Gut Healing" data-summary="Bone broth integration." data-status="Completed">
-                        <span class="g-week">W2</span>
-                        <span class="g-date">8-14</span>
-                    </button>
-                    <button class="grid-card history-card active-grid-card" data-title="Metabolic Reset Phase" data-summary="Focus on high protein." data-status="Active Now">
-                        <span class="g-week">W3</span>
-                        <span class="g-date">15-21</span>
-                    </button>
-                    <button class="grid-card history-card upcoming-grid-card" data-title="Reintroduction" data-summary="Carb reintroduction." data-status="Upcoming">
-                        <span class="g-week">W4</span>
-                        <span class="g-date">22-28</span>
-                    </button>
+                <div class="week-switcher">
+                    <button class="week-btn completed" data-week="W1" data-title="Foundation Phase" data-summary="Baseline macro establishment." data-status="Completed">W1</button>
+                    <button class="week-btn completed" data-week="W2" data-title="Gut Healing" data-summary="Bone broth integration." data-status="Completed">W2</button>
+                    <button class="week-btn active" data-week="W3" data-title="Metabolic Reset Phase" data-summary="Focus on high protein." data-status="Active Now">W3</button>
+                    <button class="week-btn upcoming" data-week="W4" data-title="Reintroduction" data-summary="Carb reintroduction." data-status="Upcoming">W4</button>
                 </div>
+            </section>
+
+            <!-- Nutritionist Card -->
+            <section class="module nutritionist-module">
+                <button class="btn-connect-clean">
+                    <div class="connect-info">
+                        <h4>Dr. Orika</h4>
+                        <p>Chat directly on WhatsApp</p>
+                    </div>
+                    <span class="connect-arrow">&rarr;</span>
+                </button>
             </section>
 
         </main>

@@ -44,33 +44,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Weekly Slim interaction
-    const dayDots = document.querySelectorAll('.day-dot');
-    dayDots.forEach(dot => {
-        dot.addEventListener('click', function() {
-            if (this.classList.contains('pending')) {
-                this.classList.remove('pending');
-                this.classList.add('logged');
-            }
-        });
-    });
-
-    // 3. History Grid Cards interaction
-    const historyCards = document.querySelectorAll('.history-card');
-    historyCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const week = this.querySelector('.g-week').innerText;
-            const date = this.querySelector('.g-date').innerText;
-            
+    // 2. Week Switcher Interaction
+    const weekBtns = document.querySelectorAll('.week-btn');
+    weekBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
             const status = this.getAttribute('data-status');
+            const week = this.getAttribute('data-week');
             const title = this.getAttribute('data-title');
             const summary = this.getAttribute('data-summary');
+            
+            // Mock dynamic dates based on week
+            const dates = {
+                'W1': 'Oct 1 - Oct 7',
+                'W2': 'Oct 8 - Oct 14',
+                'W3': 'Oct 15 - Oct 21',
+                'W4': 'Oct 22 - Oct 28'
+            };
             
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
                 if (status !== 'Upcoming') {
-                    openModal(week, title, date, summary);
+                    openModal(week, title, dates[week], summary);
                 } else {
                     alert(`${week} plan is not yet available.`);
                 }
@@ -78,15 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Dismiss Clinical Reminder
-    const dismissBtn = document.getElementById('dismissReminder');
-    const clinicalReminder = document.getElementById('clinicalReminder');
-    if (dismissBtn && clinicalReminder) {
-        dismissBtn.addEventListener('click', () => {
-            clinicalReminder.style.opacity = '0';
+    // 3. Nutritionist Card
+    const connectBtn = document.querySelector('.btn-connect-clean');
+    if (connectBtn) {
+        connectBtn.addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
             setTimeout(() => {
-                clinicalReminder.style.display = 'none';
-            }, 300);
+                this.style.transform = 'scale(1)';
+                alert('Opening WhatsApp to chat with Dr. Orika...');
+            }, 150);
         });
     }
 });

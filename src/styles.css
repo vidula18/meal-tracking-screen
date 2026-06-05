@@ -34,8 +34,8 @@
     --radius-sm: 8px;
     --spacing-xs: 4px;
     --spacing-sm: 8px;
-    --spacing-md: 8px;
-    --spacing-lg: 12px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
     
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -165,7 +165,7 @@ body {
 .module {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: var(--spacing-md);
 }
 
 .module-header {
@@ -196,37 +196,61 @@ body {
     background: var(--warning-bg);
 }
 
-/* Daily Targets Upgraded */
-.macro-grid {
+/* Streak Banner */
+.streak-banner {
+    background-color: var(--warning-bg);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid #FDE68A;
+}
+
+.streak-text {
+    color: var(--warning-color);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.streak-desc {
+    color: #B45309;
+    font-size: 12px;
+}
+
+/* Guidance Module (was Targets) */
+.guidance-card {
     background: var(--surface-color);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: var(--spacing-lg);
 }
 
-.calorie-chart-container {
+.macro-pie-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
-.calorie-donut {
+.macro-pie {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: conic-gradient(var(--calories-color) var(--percentage), var(--surface-hover) 0);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.calorie-inner {
-    width: 76px;
-    height: 76px;
+.pie-inner {
+    width: 60px;
+    height: 60px;
     background-color: var(--surface-color);
     border-radius: 50%;
     display: flex;
@@ -235,83 +259,45 @@ body {
     align-items: center;
 }
 
-.calorie-remaining {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
-}
-
-.calorie-total {
+.pie-label {
     font-size: 11px;
+    font-weight: 600;
     color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.targets-compact {
-    background: var(--surface-color);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
-}
-
-.macro-split-bars {
+.targets-list {
     display: flex;
     flex-direction: column;
-    flex: 1;
     gap: 10px;
+    flex: 1;
 }
 
-.split-bar-row {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.split-bar-header {
+.target-row {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    border-bottom: 1px solid var(--surface-hover);
+    padding-bottom: 4px;
 }
 
-.split-label {
-    font-size: 11px;
-    color: var(--text-secondary);
+.target-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.split-label strong {
-    color: var(--text-primary);
+.target-title {
+    font-size: 13px;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
-.split-left {
-    font-size: 10px;
+.target-val {
+    font-size: 12px;
+    color: var(--text-secondary);
     font-weight: 500;
-    color: var(--text-tertiary);
 }
-
-.split-bar-bg {
-    width: 100%;
-    height: 6px;
-    border-radius: 100px;
-    overflow: hidden;
-}
-
-.bg-protein { background-color: #FCE7F3; } /* Light Pink */
-.bg-carbs { background-color: #FEF3C7; } /* Light Yellow */
-.bg-fat { background-color: #EDE9FE; } /* Light Purple */
-
-.split-bar-fill {
-    height: 100%;
-    border-radius: 100px;
-}
-
-.fill-protein { background-color: var(--protein-color); }
-.fill-carbs { background-color: var(--carbs-color); }
-.fill-fat { background-color: var(--fat-color); }
 
 /* Note Banner Compact */
 .note-banner {
@@ -412,98 +398,106 @@ body {
     cursor: pointer;
 }
 
-/* Slim Weekly Log */
-.week-row-slim {
+/* Clean Habits */
+.habits-list-clean {
     display: flex;
-    justify-content: space-between;
-    background: var(--surface-color);
-    padding: 10px 16px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
-}
-
-.day-dot {
-    font-size: 12px;
-    font-weight: 600;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-.day-dot.logged {
-    background-color: var(--success-bg);
-    color: var(--success-color);
-}
-
-.day-dot.active {
-    border: 2px solid var(--accent-primary);
-    color: var(--text-primary);
-}
-
-.day-dot.pending {
-    color: var(--text-tertiary);
-}
-
-/* Monthly Grid */
-.module-header-compact {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.module-header-compact h2 {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.monthly-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    flex-direction: column;
     gap: 8px;
 }
 
-.grid-card {
-    background-color: var(--surface-color);
+.habit-item {
+    background: var(--surface-color);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: 8px;
+    padding: 12px var(--spacing-md);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
 }
 
-.g-week {
+.habit-name {
     font-size: 13px;
     font-weight: 600;
     color: var(--text-primary);
 }
 
-.g-date {
-    font-size: 10px;
+.habit-desc {
+    font-size: 12px;
     color: var(--text-secondary);
 }
 
-.active-grid-card {
-    border-color: var(--accent-secondary);
-    background-color: var(--accent-bg);
+/* Week Switcher */
+.week-switcher {
+    display: flex;
+    gap: 8px;
+    background: var(--surface-color);
+    padding: 8px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
-.active-grid-card .g-week {
+.week-btn {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.week-btn.completed {
+    background: var(--surface-hover);
+    color: var(--text-secondary);
+}
+
+.week-btn.active {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.week-btn.upcoming {
+    background: transparent;
+    color: var(--text-tertiary);
+    cursor: not-allowed;
+}
+
+/* Clean Nutritionist Card */
+.btn-connect-clean {
+    width: 100%;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+    transition: var(--transition);
+}
+
+.btn-connect-clean:active {
+    transform: scale(0.98);
+}
+
+.connect-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.connect-info p {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.connect-arrow {
+    font-size: 16px;
     color: var(--accent-primary);
-}
-
-.upcoming-grid-card {
-    opacity: 0.5;
-    background-color: var(--bg-color);
 }
 
 /* Modal Overlay */
