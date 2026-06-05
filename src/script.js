@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 4. WhatsApp Card interaction
-    const waCard = document.querySelector('.whatsapp-card');
+    const waCard = document.querySelector('.btn-whatsapp-card');
     if (waCard) {
         waCard.addEventListener('click', function() {
             this.style.transform = 'scale(0.96)';
