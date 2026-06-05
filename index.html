@@ -231,6 +231,67 @@
             </section>
 
         </main>
+        <!-- Meal Plan Detail Modal -->
+        <div class="modal-overlay" id="planModal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <button class="icon-btn close-modal-btn" aria-label="Close modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <h2 class="modal-title">Plan Details</h2>
+                    <div class="header-right-placeholder"></div>
+                </header>
+                
+                <div class="modal-scroll">
+                    <div class="modal-plan-intro">
+                        <span class="plan-badge" id="modalPlanBadge">Week 3</span>
+                        <h3 id="modalPlanTitle">Metabolic Reset Phase</h3>
+                        <p class="history-date" id="modalPlanDate">Oct 15 - Oct 21</p>
+                        <p class="plan-summary" id="modalPlanSummary">Focus on high protein, moderate healthy fats, and low glycemic carbohydrates.</p>
+                    </div>
+
+                    <div class="food-lists">
+                        <!-- Continue Eating -->
+                        <div class="food-section positive">
+                            <div class="food-section-header">
+                                <div class="section-icon"><i class="fa-solid fa-leaf"></i></div>
+                                <h4>Foods to Enjoy</h4>
+                            </div>
+                            <div class="chips-container">
+                                <span class="chip positive-chip">Leafy Greens</span>
+                                <span class="chip positive-chip">Lean Poultry</span>
+                                <span class="chip positive-chip">Wild Salmon</span>
+                                <span class="chip positive-chip">Avocado</span>
+                                <span class="chip positive-chip">Berries</span>
+                                <span class="chip positive-chip">Bone Broth</span>
+                            </div>
+                        </div>
+
+                        <!-- Limit -->
+                        <div class="food-section limit">
+                            <div class="food-section-header">
+                                <div class="section-icon"><i class="fa-solid fa-circle-minus"></i></div>
+                                <h4>Foods to Limit</h4>
+                            </div>
+                            <ul class="food-list">
+                                <li>Refined sugars and artificial sweeteners</li>
+                                <li>Processed seed oils (Canola, Vegetable)</li>
+                                <li>High-glycemic carbohydrates</li>
+                                <li>Dairy (if sensitive)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="note-banner modal-note">
+                        <div class="note-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="note-content">
+                            <strong>Pro Tip</strong>
+                            <p>Batch cook your lean proteins on Sunday to make weekday meals effortless.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="src/script.js"></script>
 </body>

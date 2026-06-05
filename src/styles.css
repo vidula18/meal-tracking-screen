@@ -542,3 +542,209 @@ body {
 .history-card.upcoming .history-summary {
     color: var(--text-tertiary);
 }
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 480px;
+    height: 90vh;
+    background-color: var(--bg-color);
+    border-radius: 24px 24px 0 0;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background-color: var(--surface-color);
+    border-radius: 24px 24px 0 0;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.modal-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.modal-scroll {
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.modal-plan-intro {
+    background: var(--surface-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.plan-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-primary);
+    background: var(--accent-bg);
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+}
+
+.modal-plan-intro h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.plan-summary {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-top: 12px;
+}
+
+.food-lists {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.food-section {
+    background: var(--surface-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.food-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.food-section-header h4 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.section-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.positive .section-icon {
+    background-color: var(--success-bg);
+    color: var(--success-color);
+}
+
+.positive h4 { color: var(--success-color); }
+
+.limit .section-icon {
+    background-color: var(--warning-bg);
+    color: var(--warning-color);
+}
+
+.limit h4 { color: var(--text-primary); }
+
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 100px;
+}
+
+.positive-chip {
+    background-color: var(--success-bg);
+    color: #065F46; /* Darker green */
+}
+
+.food-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.food-list li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.food-list li::before {
+    content: "•";
+    color: var(--warning-color);
+    font-weight: bold;
+}
+
+.modal-note {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+}
+
+.modal-note .note-icon {
+    color: var(--accent-primary);
+}
+
+.modal-note .note-content strong,
+.modal-note .note-content p {
+    color: var(--text-primary);
+}
+
+.modal-note .note-content p {
+    color: var(--text-secondary);
+}
